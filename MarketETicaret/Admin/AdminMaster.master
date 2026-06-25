@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="MarketETicaret.Admin.AdminMaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Yönetim Paneli</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fc; font-family: sans-serif; }
+        .admin-navbar { background: #2c3e50; min-height: 70px; }
+        .nav-link { color: rgba(255,255,255,0.8)!important; margin-right: 15px; }
+        .nav-link:hover { color: #fff!important; }
+        .admin-content { padding: 25px; }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg admin-navbar navbar-dark shadow mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold text-warning" href="Dashboard.aspx">PANEL</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="Dashboard.aspx">Özet</a></li>
+                        <li class="nav-item"><a class="nav-link" href="SiparisYonetimi.aspx">Siparişler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="UrunYonetimi.aspx">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="KategoriYonetimi.aspx">Kategoriler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="MusteriYonetimi.aspx">Müşteriler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="HakkimizdaYonetimi.aspx">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="IletisimYonetimi.aspx">İletişim</a></li>
+                    </ul>
+                    <asp:LinkButton ID="btnCikis" runat="server" CssClass="btn btn-sm btn-outline-light" OnClick="btnCikis_Click">Çıkış</asp:LinkButton>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid admin-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
